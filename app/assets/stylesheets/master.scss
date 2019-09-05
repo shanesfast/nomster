@@ -5,6 +5,16 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
 }
 
+body {
+  background: image_url('small_steps.png');
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.navbar {
+  background: image_url('tweed.png');
+  box-shadow: 0 5px 5px #576263;
+}
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
