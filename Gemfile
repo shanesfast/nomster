@@ -73,3 +73,5 @@ end
 gem 'pagy', '~> 3.5'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'geocoder'
+gem 'figaro'
