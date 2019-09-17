@@ -14,6 +14,7 @@ body {
 .navbar {
   background: image_url('tweed.png');
   box-shadow: 0 5px 5px #576263;
+  margin-bottom: 20px;
 }
 
 .navbar-dark .navbar-brand {
@@ -58,4 +59,34 @@ body {
 
 #map {
   height: 300px;
+}
+
+#comment-btn {
+  margin-top: 20px;
+}
+
+blockquote {
+  margin: 0 auto;
+  padding: 1em;
+  border-left: 5px solid #999;
+}
+blockquote:before {
+  display: none;
+}
+blockquote p {
+  color: #555;
+  font-size: 12pt;
+  line-height: 1.4;
+  font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+}
+blockquote footer {
+  margin-top: .5em;
+  padding: 0;
+  color: #777;
+  font-size: 12pt;
+  text-align: left;
+  font-style: italic;
+}
+blockquote footer:before {
+  content: '— ';
 }
