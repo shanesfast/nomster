@@ -23,3 +23,6 @@ module Nomster
     config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end
+
+# For Image uploader via CarrierWave Gem
+require 'carrierwave/orm/activerecord'
