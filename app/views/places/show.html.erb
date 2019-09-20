@@ -7,7 +7,7 @@
   </div>
 
   <% @place.photos.each do |photo| %>
-    <%= image_tag(photo.picture.url) %>
+    <%= image_tag(photo.picture.thumb.url) %>
     <%= photo.caption %>
   <% end %>
 
