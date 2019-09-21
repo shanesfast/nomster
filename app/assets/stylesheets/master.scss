@@ -7,8 +7,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #353535;
+    background-clip: padding-box;
+    border: 1px solid rgb(211, 219, 228);
+    border-radius: 0.3rem;
+    outline: 0;
+  }
+  .btn-primary {
+    color: #494949;
+    background-color: #f5b659;
+    border-color: #ac8d5f;
+    &:hover {
+      color: #000000;
+      background-color: #f7d8a9;
+      border-color: #000000;
+    }
+  }
+  .btn-secondary {
+    color: #3e3434;
+    background-color: #d3dbe4;
+    border-color: #60686f;
+    &:hover {
+      color: #fff;
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+  }
   background: image_url('dust_scratches.png');
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  color: #f6f6f6;
 }
 
 .navbar {
@@ -24,15 +57,29 @@ body {
 }
 
 .booyah-box {
+  .golden, .golden a {
+    color: #ffb75b;
+  }
+  .index-img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px solid #f7c88c;
+  }
+  .carousel {
+    border: 2px solid #f7c88c;
+  }
+  small {
+    display: table-caption;
+    font-size: 75%;
+    font-weight: 400;
+  }
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  background: image_url('tweed.png');
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .pagy-box {
@@ -70,15 +117,17 @@ body {
 }
 
 blockquote {
-  margin: 0 auto;
   padding: 1em;
-  border-left: 5px solid #999;
+  border: 2px solid #f7c88c;
+  border-radius: 25px;
+  background-color: #494949;
 }
 blockquote:before {
   display: none;
 }
 blockquote p {
-  color: #555;
+  color: #f5b659;
+  text-align: center;
   font-size: 12pt;
   line-height: 1.4;
   font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
@@ -86,9 +135,9 @@ blockquote p {
 blockquote footer {
   margin-top: .5em;
   padding: 0;
-  color: #777;
+  color: #f6f6f6;
   font-size: 12pt;
-  text-align: left;
+  text-align: right;
   font-style: italic;
 }
 blockquote footer:before {
