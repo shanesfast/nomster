@@ -1,6 +1,54 @@
 <div class="booyah-box">
-  <h1 class="golden"><%= @user.email %></h1>
-  <h3 class="golden">Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-  <h4><%= @user.comments.count %> total comments</h4>
-  <h4><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h4>
+  <div class="row">
+    <div class="col-4 d-flex justify-content-end">
+      <div class="white-bg">
+        <%= image_tag 'user.png' %>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <h1 class="golden"><%= @user.email %></h1>
+      <h3 class="golden">Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+      <h4><%= @user.comments.count %> total comments</h4>
+      <h4><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h4>
+    </div>
+  </div>
+  <div class="clear"></div>
 </div>
+
+<h1 class="text-center dark-grey-text">My Comments</h1>
+
+<div class="row margin-top-10px">
+  <% @user.comments.each do |comment| %>
+    <div class="col-12 col-sm-6 offset-3">
+      <blockquote>
+        <h2 class="text-center golden"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b>
+        <% end %>
+        <p><q><%= comment.message %></q></p>
+        <footer><%= comment.user.email %></footer>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+
+<h1 class="text-center dark-grey-text">My Places</h1>
+
+<% @user.places.each do |place| %>
+
+  <div class="booyah-box row col-8 offset-2">
+    <div class="col-8">
+      <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
+      <i><%= place.address %></i><br /><br />
+      <p><%= place.description %></p><br />
+    </div>
+
+    <% if place.photos.present? %>
+      <div class="col-4">
+        <%= link_to image_tag(place.photos.first.picture.url, class: "index-img"), place_path(place) %>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
