@@ -35,7 +35,7 @@
       <i><%= place.address %></i><br /><br />
       <p><%= place.description %></p><br />
       <% if place.user.present? %>
-        <small>Provided by: <%= place.user.email %></small>
+        <small class="bottom-0">Provided by: <%= place.user.email %></small>
     <% end %>
     </div>
 
@@ -60,6 +60,8 @@
 
 <% end %>
 
-<div class="pagy-box .pagy-box-2 col-10 offset-4">
+<div class="clear"></div>
+
+<div class="pagy-box .pagy-box-2 col-12 d-flex justify-content-center">
   <%== pagy_bootstrap_combo_nav_js(@pagy) %>
 </div>
