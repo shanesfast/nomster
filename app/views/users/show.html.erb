@@ -19,8 +19,8 @@
 <h1 class="text-left dark-grey-text border-light-grey ml-5">My Comments</h1>
 
 <div class="row margin-top-10px">
-  <% @user.comments.each do |comment| %>
-    <div class="col-12 col-sm-6 offset-3">
+  <% @user.comments.order(id: :desc).limit(4).each do |comment| %>
+    <div class="col-12 col-sm-6">
       <blockquote>
         <h2 class="text-center golden"><%= link_to comment.place.name, place_path(comment.place) %></h2>
         <% if comment.humanized_rating.present? %>
@@ -35,20 +35,19 @@
 
 <h1 class="text-right dark-grey-text border-light-grey mr-5">My Places</h1>
 
-<% @user.places.each do |place| %>
-
-  <div class="booyah-box row col-8 offset-2">
-    <div class="col-8">
-      <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
-      <i><%= place.address %></i><br /><br />
-      <p><%= place.description %></p><br />
-    </div>
-
-    <% if place.photos.present? %>
-      <div class="col-4">
-        <%= link_to image_tag(place.photos.first.picture.url, class: "index-img"), place_path(place) %>
+<% @user.places.order(id: :desc).limit(4).each do |place| %>
+    <div class="booyah-box row col-8 offset-2">
+      <div class="col-8">
+        <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
+        <i><%= place.address %></i><br /><br />
+        <p><%= place.description %></p><br />
       </div>
-    <% end %>
-  </div>
 
+      <% if place.photos.present? %>
+        <div class="col-4">
+          <%= link_to image_tag(place.photos.first.picture.url, class: "index-img"), place_path(place) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>

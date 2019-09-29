@@ -177,3 +177,8 @@ blockquote footer:before {
   border-bottom: 2px solid #838383;
   padding-bottom: 10px;
 }
+
+.max-h-500px {
+  max-height: 500px;
+  overflow: scroll;
+}
