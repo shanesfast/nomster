@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @pagy, @places = pagy(Place.all, page: params[:page], items: 5)
+    @pagy_places, @places = pagy(Place.all, page: params[:page], items: 5)
   end
 
   def new

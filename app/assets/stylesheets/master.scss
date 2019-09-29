@@ -84,18 +84,20 @@ body {
   background: image_url('tweed.png');
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .pagy-box {
   margin-bottom: 15px;
 }
 
-.pagy-box .btn {
+.pagy-box .pagy-bootstrap-nav .pagination .page-item {
   .text-primary { color: #525252 !important; }
-  color: #525252;
-  background-color: #f3c58a;
-  border-color: #7d705e;
+  .page-link { 
+    color: #525252;
+    background-color: #f3c58a;
+    border-color: #7d705e;
+   }
 }
 
 .btn-margin-left {
