@@ -19,7 +19,7 @@
 <h1 class="text-left dark-grey-text border-light-grey ml-5">My Comments</h1>
 
 <div class="row margin-top-10px">
-  <% @user.comments.order(id: :desc).limit(4).each do |comment| %>
+  <% @comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <blockquote>
         <h2 class="text-center golden"><%= link_to comment.place.name, place_path(comment.place) %></h2>
@@ -31,11 +31,15 @@
       </blockquote>
     </div>
   <% end %>
+
+  <div class="pagy-box .pagy-box-2 col-12 d-flex justify-content-center">
+    <%== pagy_bootstrap_nav(@pagy_comments) %>
+  </div>
 </div>
 
 <h1 class="text-right dark-grey-text border-light-grey mr-5">My Places</h1>
 
-<% @user.places.order(id: :desc).limit(4).each do |place| %>
+<% @places.each do |place| %>
     <div class="booyah-box row col-8 offset-2">
       <div class="col-8">
         <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
@@ -49,5 +53,8 @@
         </div>
       <% end %>
     </div>
-  </div>
 <% end %>
+
+<div class="pagy-box .pagy-box-2 col-12 d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy_places) %>
+</div>
