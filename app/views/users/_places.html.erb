@@ -1,0 +1,21 @@
+<h1 class="text-right dark-grey-text border-light-grey mr-5">My Places</h1>
+
+<% @places.each do |place| %>
+    <div class="booyah-box row col-8 offset-2">
+      <div class="col-8">
+        <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
+        <i><%= place.address %></i><br /><br />
+        <p><%= place.description %></p><br />
+      </div>
+
+      <% if place.photos.present? %>
+        <div class="col-4">
+          <%= link_to image_tag(place.photos.first.picture.url, class: "index-img"), place_path(place) %>
+        </div>
+      <% end %>
+    </div>
+<% end %>
+
+<div class="pagy-box col-12 d-flex justify-content-center">
+  <%== pagy_bootstrap_combo_nav_js(@pagy_places) %>
+</div>

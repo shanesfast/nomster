@@ -22,6 +22,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @comment = Comment.new
     @photo = Photo.new
+    @pagy_comments, @comments = pagy(@place.comments, page: params[:page], items: 4, link_extra: 'data-remote="true"')
   end
 
   def edit

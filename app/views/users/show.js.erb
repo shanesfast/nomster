@@ -1,0 +1,5 @@
+$('#comments_list').html("<%= j(render 'comments')%>");
+Pagy.init(document.getElementById('comments_list'));
+
+$('#places_list').html("<%= j(render 'places')%>");
+Pagy.init(document.getElementById('places_list'));

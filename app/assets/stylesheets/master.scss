@@ -87,11 +87,11 @@ body {
   padding: 20px;
 }
 
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .btn-primary.focus {                 // Overriding boostrap glow on focus
   box-shadow: 0 0 0 0.2rem rgba(243, 147, 25, 0.8);
 }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus, 
+.btn-primary:not(:disabled):not(.disabled):active:focus, // Overriding bootstrap glow on focus+active
 .btn-primary:not(:disabled):not(.disabled).active:focus, 
 .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(243, 147, 25, 0.8);
