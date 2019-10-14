@@ -9,8 +9,6 @@
 # Extras
 # See https://ddnexus.github.io/pagy/extras
 
-require 'pagy/extras/bootstrap'
-
 # Backend Extras
 
 # Array extra: Paginate arrays efficiently, avoiding expensive array-wrapping and without overriding
@@ -35,7 +33,7 @@ require 'pagy/extras/bootstrap'
 
 # Bootstrap extra: Add nav, nav_js and combo_nav_js helpers and templates for Bootstrap pagination
 # See https://ddnexus.github.io/pagy/extras/bootstrap
-# require 'pagy/extras/bootstrap'
+require 'pagy/extras/bootstrap'
 
 # Bulma extra: Add nav, nav_js and combo_nav_js helpers and templates for Bulma pagination
 # See https://ddnexus.github.io/pagy/extras/bulma
@@ -93,10 +91,10 @@ require 'pagy/extras/bootstrap'
 # Metadata extra: Provides the pagination metadata to Javascript frameworks like Vue.js, react.js, etc.
 # See https://ddnexus.github.io/pagy/extras/metadata
 # you must require the shared internal extra (BEFORE the metadata extra) ONLY if you need also the :sequels
-# require 'pagy/extras/shared'
-# require 'pagy/extras/metadata'
+require 'pagy/extras/shared'
+require 'pagy/extras/metadata'
 # For performance reason, you should explicitly set ONLY the metadata you use in the frontend
-# Pagy::VARS[:metadata] = [:scaffold_url, :count, :page, :prev, :next, :last]    # example
+Pagy::VARS[:metadata] = [:scaffold_url, :count, :page, :prev, :next, :last]    # example
 
 # Trim extra: Remove the page=1 param from links
 # See https://ddnexus.github.io/pagy/extras/trim
@@ -129,7 +127,7 @@ require 'pagy/extras/bootstrap'
 # Rails: extras assets path required by the helpers that use javascript
 # (pagy*_nav_js, pagy*_combo_nav_js, and pagy_items_selector_js)
 # See https://ddnexus.github.io/pagy/extras#javascript
-# Rails.application.config.assets.paths << Pagy.root.join('javascripts')
+Rails.application.config.assets.paths << Pagy.root.join('javascripts')
 
 
 # I18n
