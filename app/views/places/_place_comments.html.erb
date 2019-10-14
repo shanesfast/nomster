@@ -1,0 +1,22 @@
+<div class="booyah-box col-10 offset-1 clearfix">
+  <h1 class="golden">Comments</h1>
+
+  <div class="row margin-top-10px">
+    <% @comments.each do |comment| %>
+        <div class="col-12 col-sm-6">
+          <blockquote>
+            <% if comment.humanized_rating.present? %>
+              <b><%= comment.humanized_rating %></b>
+            <% end %>
+            <p><q><%= comment.message %></q></p>
+            <footer><%= comment.user.email %></footer>
+          </blockquote>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="pagy-box col-12 d-flex justify-content-center">
+    <%== pagy_bootstrap_combo_nav_js(@pagy_comments) %>
+  </div>
+
+</div>

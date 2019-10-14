@@ -1,0 +1,38 @@
+<% @places.each do |place| %>
+
+  <div class="booyah-box row col-8 offset-2">
+    <div class="col-8">
+      <h1 class="golden"><%= link_to place.name, place_path(place) %></h1>
+      <i><%= place.address %></i><br /><br />
+      <p><%= place.description %></p><br />
+      <% if place.user.present? %>
+        <small class="bottom-0">Provided by: <%= place.user.email %></small>
+    <% end %>
+    </div>
+
+    <% if place.photos.present? %>
+      <div class="col-4">
+        <%= link_to image_tag(place.photos.first.picture.url, class: "index-img"), place_path(place) %>
+      </div>
+    <% end %>
+
+    <% if place.comments.present? %>
+      <div class="col-12 margin-top-10px">
+        <blockquote class="margin-top-10px">
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <p><q><%= place.comments.last.message %></q></p>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
+
+<div class="clear"></div>
+
+<div class="pagy-box .pagy-box-2 col-12 d-flex justify-content-center">
+  <%== pagy_bootstrap_combo_nav_js(@pagy_places) %>
+</div>

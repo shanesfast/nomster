@@ -87,17 +87,40 @@ body {
   padding: 20px;
 }
 
-.pagy-box {
-  margin-bottom: 15px;
+.btn-primary:focus, .btn-primary.focus {                 // Overriding boostrap glow on focus
+  box-shadow: 0 0 0 0.2rem rgba(243, 147, 25, 0.8);
 }
 
-.pagy-box .pagy-bootstrap-nav .pagination .page-item {
-  .text-primary { color: #525252 !important; }
-  .page-link { 
-    color: #525252;
-    background-color: #f3c58a;
-    border-color: #7d705e;
-   }
+.btn-primary:not(:disabled):not(.disabled):active:focus, // Overriding bootstrap glow on focus+active
+.btn-primary:not(:disabled):not(.disabled).active:focus, 
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(243, 147, 25, 0.8);
+}
+
+.pagy-box {
+  .btn-group {
+    .btn-primary {
+      color: #525252;
+      background-color: #f3c58a;
+      border-color: #7d705e;
+    }
+    .btn-primary.disabled {
+      color: #525252;
+      background-color: #f3c58a;
+      border-color: #7d705e;
+    }
+    .btn-primary:active {
+      border-color: #7d705e;
+      background-color: #f7b158;
+    }
+    .pagy-combo-input.btn.disabled {
+      .text-primary {
+        color: #5e5e5e !important;
+      }
+      opacity: 1;
+    }
+  }
+  margin-bottom: 15px;
 }
 
 .btn-margin-left {

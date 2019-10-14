@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @pagy_places, @places = pagy(Place.all, page: params[:page], items: 5)
+    @pagy_places, @places = pagy(Place.all, page: params[:page], items: 5, link_extra: 'data-remote="true"')
   end
 
   def new
@@ -22,6 +22,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @comment = Comment.new
     @photo = Photo.new
+    @pagy_comments, @comments = pagy(@place.comments, page: params[:page], items: 4, link_extra: 'data-remote="true"')
   end
 
   def edit
