@@ -1,5 +1,7 @@
 # NOMSTER
 
+![Nomster](https://i.imgur.com/tmi1RN2.png)
+
 Welcome to Nomster! A simple rating/review site for your most/least favorite places to eat. You must create an account to contribute to the site, otherwise you can just browse through the recently posted reviews. Once you are signed up you can add your own places, upload photos, and leave reviews. You can also comment on other users places. Feel free to fork this project and make it your own! 
 
 ## Installation
